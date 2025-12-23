@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package pubsub;
+
+
+option go_package = "example.com/pubsub-go-sample/proto;pubsubpb";
+//option go_package = "./;pubsub";
+
+// 統合テストで送るメッセージ
+message TestMessage {
+  string greeting = 1;
+  int64 timestamp = 2;          // Unix milli
+  string test_id = 3;           // テスト実行ごとに一意のID（オプション）
+}
